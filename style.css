@@ -1,0 +1,134 @@
+/* Hacker-themed styles */
+:root{
+  --bg:#050806;
+  --neon:#22ff6e;
+  --muted:#8fb3a5;
+  --card:#0b0f0b;
+  --glass: rgba(255,255,255,0.03);
+  --accent: #00ff9a;
+  --mono: "Share Tech Mono", monospace;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--mono);
+  background:var(--bg);
+  color:var(--neon);
+  overflow-x:hidden;
+}
+
+/* full-screen canvas sits behind everything */
+#matrix{
+  position:fixed;
+  left:0; top:0;
+  width:100%; height:100%;
+  z-index:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6) 60%);
+}
+
+/* Layout */
+.topbar{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 28px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.2), transparent);
+  border-bottom:1px solid rgba(34,255,110,0.06);
+}
+.topbar h1{margin:0; font-size:20px}
+.topbar nav a{
+  color:var(--neon);
+  text-decoration:none;
+  margin-left:16px;
+  font-size:14px;
+}
+.container{
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  margin:28px auto;
+  padding:20px;
+}
+
+.intro h2{font-size:22px; margin:6px 0 4px}
+.intro p{color:var(--muted); margin-top:0}
+
+/* Forms & cards */
+.auth, .post-create{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:16px;
+  border-radius:8px;
+  border:1px solid rgba(34,255,110,0.05);
+  margin-bottom:18px;
+}
+.auth input, .auth textarea, .post-create input, .post-create textarea{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.03);
+  color:var(--neon);
+  font-family:var(--mono);
+}
+button{
+  background:transparent;
+  color:var(--neon);
+  border:1px solid rgba(34,255,110,0.12);
+  padding:10px 14px;
+  cursor:pointer;
+  border-radius:6px;
+  font-family:var(--mono);
+}
+.note{color:var(--muted); font-size:13px}
+
+/* posts */
+.posts-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:12px;
+}
+.post{
+  background: rgba(0,0,0,0.22);
+  padding:12px;
+  border-radius:8px;
+  border:1px solid rgba(34,255,110,0.04);
+}
+.post img{max-width:100%; display:block; border-radius:4px}
+.post h4{margin:8px 0 4px}
+.post p{margin:0 0 8px; color:var(--muted); font-size:14px}
+.post .meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
+
+/* modal */
+.modal{
+  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+  z-index:10; background:rgba(0,0,0,0.6);
+}
+.modal.hidden{display:none}
+.modal-content{
+  background:#08140a; padding:18px; border-radius:8px; max-width:600px; width:95%;
+  border:1px solid rgba(34,255,110,0.06);
+  color:var(--neon);
+  position:relative;
+}
+.modal-content img{max-width:100%; border-radius:6px; margin-bottom:12px}
+.close{position:absolute; right:10px; top:6px; background:transparent; color:var(--neon); font-size:22px; border:none}
+
+/* admin */
+.admin-container .dashboard-cards{display:flex; gap:12px; margin-bottom:12px}
+.card{flex:1; background:rgba(0,0,0,0.18); padding:16px; border-radius:8px; text-align:center}
+.card h4{margin:0 0 6px}
+.hidden{display:none}
+
+/* footer */
+.footer{position:relative; z-index:2; text-align:center; color:var(--muted); padding:18px 0;}
+
+/* small screens */
+@media (max-width:600px){
+  .topbar{padding:12px}
+  .container{padding:12px}
+  .admin-container .dashboard-cards{flex-direction:column}
+}
