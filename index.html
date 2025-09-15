@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WhatsApp Group Ads — Home</title>
+
+  <!-- Hacker style font -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+
+  <header class="topbar">
+    <h1>WhatsApp Group Ads</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Post your WhatsApp group or channel ad for free</h2>
+      <p>Create an account to post and manage your ads. Click any ad to view details and open the link.</p>
+    </section>
+
+    <section class="post-create">
+      <h3>Create new ad</h3>
+      <form id="createPostForm">
+        <input type="text" id="postTitle" placeholder="Title (e.g. Buy & Sell Group)" required />
+        <textarea id="postDesc" placeholder="Short description" rows="3" required></textarea>
+        <input type="url" id="postLink" placeholder="WhatsApp invite link or channel link (https://...)" required />
+        <input type="file" id="postImage" accept="image/*" />
+        <button type="submit">Upload Ad (free)</button>
+        <p class="note">You must be logged in to create an ad. Use Login/Register links above.</p>
+      </form>
+    </section>
+
+    <section>
+      <h3>Ads</h3>
+      <div id="postsList" class="posts-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>&copy; 2025 WhatsApp Group Ads</small>
+  </footer>
+
+  <div id="postModal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="close">×</button>
+      <h3 id="modalTitle"></h3>
+      <img id="modalImage" alt="" />
+      <p id="modalDesc"></p>
+      <p><a id="modalLink" target="_blank" rel="noopener noreferrer">Open Link</a></p>
+      <p>Views: <span id="modalViews"></span></p>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
