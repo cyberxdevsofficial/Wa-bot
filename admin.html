@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Dashboard — WhatsApp Group Ads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+
+  <header class="topbar">
+    <h1>Admin Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container admin-container">
+    <section id="adminLoginSection" class="admin-login">
+      <h2>Admin Login</h2>
+      <form id="adminAuthForm">
+        <input type="text" id="admUser" placeholder="Username" required />
+        <input type="password" id="admPass" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p class="note">Default admin username: admin — password: Anuga123</p>
+    </section>
+
+    <section id="adminPanel" class="hidden">
+      <div class="dashboard-cards">
+        <div class="card"><h4>View count</h4><p id="viewCount">0</p></div>
+        <div class="card"><h4>User count</h4><p id="userCount">0</p></div>
+        <div class="card"><h4>Post count</h4><p id="postCount">0</p></div>
+      </div>
+
+      <h3>All posts</h3>
+      <div id="adminPostsList" class="posts-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer"><small>&copy; 2025 WhatsApp Group Ads</small></footer>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
